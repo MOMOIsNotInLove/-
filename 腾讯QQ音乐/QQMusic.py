@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import os
 import time
-
+import re
 import requests
 import json
 import random
@@ -70,7 +70,7 @@ def get_music():
             # 页数
             "p": page,
             # 偏移量
-            "n": 15,
+            "n": 10,
             "w": keyword,
             "format": "json",
             "inCharset": "utf8"
@@ -194,9 +194,28 @@ def parse_js(sign, guid, mid, uin):
     if response.status_code == 200:
         res = response.json()
         purl = res['req_0']['data']['midurlinfo'][0]['purl']
+        return purl
 
 
-# 开始下载歌曲
+# 解析移动端的mp3的url
+def parse_js_m(mid):
+    # 每一首歌曲播放界面的url
+    play_url = "https://i.y.qq.com/v8/playsong.html?songmid={}".format(mid)
+    headers = {
+        "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
+        "sec-fetch-mode": "navigate",
+        "upgrade-insecure-requests": "1"
+    }
+    info = session.get(url=play_url, headers=headers, timeout=10)
+    if info.status_code == 200:
+        doc = info.text
+        # 正则提取MP3播放url
+        pattern = re.compile('<audio id="h5audio_media" height="0" width="0" src="(.*?)" autoplay></audio>', re.S)
+        m_url = re.findall(pattern, info.text)[0]
+        return m_url
+
+
+# PC端开始下载歌曲
 def download_music(url, title, singer):
     headers = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"}
@@ -212,30 +231,28 @@ def download_music(url, title, singer):
 
 def start():
     guid = "7238047136"
-    uin = "QQ号"
+    uin = "3434279505"
     # 遍历数组数据
     for music_pages in get_music():
         for item in music_pages:
             mid = item.get("mid")
             title = item.get("title")
             singer = item.get("singer")
-            print("正在下载《{}》--{}".format(title,singer))
+            print("正在下载：《{}》--{}--{}".format(title, singer,mid))
             print("")
-            if mid is None:
-                continue
-            else:
-                url = parse_js_old(guid, mid, uin)
-                # print(url)
-                # print("title：", title)
-                # print("singer：", singer)
-                # print("id：", id)
-                # print("mid：", mid)
-                # print("================")
-                # 开始下载
-                download_music(url, title, singer)
-                time.sleep(random.uniform(1,3))
+            url = parse_js_old(guid, mid, uin)
+            """
+            这里很重要：但我们无法获取url时，就要思考一下是不是弹出“您播放的歌曲仅限客户端播放”
+            这时我们就要利用移动端的方式请求
+            """
+            if url is None:
+                # 移动端的方式获取下载url
+                url = parse_js_m(mid)
+            # 开始下载
+            download_music(url, title, singer)
+            time.sleep(random.uniform(1, 3))
 
 
 if __name__ == '__main__':
-    # parse_js_old("7238047136", "0039MnYb0qxYhV", "QQ号")
+    # parse_js_old("7238047136", "0039MnYb0qxYhV", "3434279505")
     start()
