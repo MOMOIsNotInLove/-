@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DPlayer视频播放器</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-12">
+                    <div id="dplayer"></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.js"></script>
+        <script>
+            const dp = new DPlayer({
+                container: document.getElementById('dplayer'),
+                autoplay: false,
+                theme: '#FADFA3',
+                loop: true,
+                lang: 'zh-cn',
+                screenshot: true,
+                hotkey: true,
+                preload: 'metadata',
+                // 左上角展示的logo
+                logo: 'http://dplayer.js.org/logo.png',
+                volume: 0.7,
+                mutex: true,
+                video: {
+                    // url: 'https://csrc.vcloud.dogecdn.com/vcloud/17/v/20190424/1556036075_818c4125ec9c8cbc7a7a8a7cc1601512/1037/7d515b22c4958598c0fbd1e6290a5ca5.mp4',
+                    quality: [
+                        {
+                            name: 'HD',
+                            url: 'https://yuledy.helanzuida.com/20200411/2249_bf514617/1000k/hls/index.m3u8',
+                            type: 'hls',
+                        },
+                        {
+                            name: 'SD',
+                            url: 'https://csrc.vcloud.dogecdn.com/vcloud/17/v/20190424/1556036075_818c4125ec9c8cbc7a7a8a7cc1601512/1037/7d515b22c4958598c0fbd1e6290a5ca5.mp4',
+                            type: 'normal',
+                        },
+                    ],
+                    defaultQuality: 0,
+                    
+                    pic: 'https://cdn.jsdelivr.net/gh/FioraLove/Images/531-bigskin-1.jpg',
+                    thumbnails: 'https://cdn.jsdelivr.net/gh/FioraLove/Images/531-bigskin-1.jpg',
+                    type: 'auto',
+                },
+                // 字幕
+                subtitle: {
+                    url: 'https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.vtt',
+                    type: 'webvtt',
+                    fontSize: '20px',
+                    bottom: '8%',
+                    color: '#b7daff',
+                },
+                // 弹幕
+                danmaku: {
+                    id: '9E2E3368B56CDBB45',
+                    api: 'https://dplayer.moerats.com/',
+                    token: 'tokendemo',
+                    maximum: 1000,
+                    //addition: ['https://api.prprpr.me/dplayer/v3/bilibili?aid=4157142'],
+                    user: 'DIYgod',
+                    bottom: '15%',
+                    unlimited: true,
+                },
+                contextmenu: [
+                    {
+                        text: '二次作者',
+                        link: 'https://ahriLove.top'
+                    }
+                ],
+                highlight: [
+                    {
+                        time: 20,
+                        text: '这是第 20 秒',
+                    },
+                    {
+                        time: 120,
+                        text: '这是 2 分钟',
+                    },
+                ],
+            });
+            // 快进秒数
+            // dp.seek(100);
+
+            // 提交一个新弹幕
+            dp.danmaku.send(
+                {
+                    text: 'dplayer is amazing',
+                    color: '#b7daff',
+                    type: 'right', // should be `top` `bottom` or `right`
+                },
+                function () {
+                    console.log('success');
+                }
+            );
+            // 实时绘制一个新弹幕
+            dp.danmaku.draw({
+                text: 'CHD is god',
+                color: '#fff',
+                type: 'bottom',
+            });
+            // 弹幕透明度
+            dp.danmaku.opacity(0.5);
+        </script>
+        <!-- jQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
