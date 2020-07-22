@@ -9,12 +9,6 @@
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/dplayer@1.25.0/dist/DPlayer.min.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         
@@ -39,25 +33,13 @@
                 hotkey: true,
                 preload: 'metadata',
                 // 左上角展示的logo
-                logo: 'http://dplayer.js.org/logo.png',
-                volume: 0.7,
+                logo: 'https://cdn.jsdelivr.net/gh/FioraLove/Images/D:/data/imagesaaa.png',
+                volume: 0.5,
                 mutex: true,
                 video: {
-                    // url: 'https://csrc.vcloud.dogecdn.com/vcloud/17/v/20190424/1556036075_818c4125ec9c8cbc7a7a8a7cc1601512/1037/7d515b22c4958598c0fbd1e6290a5ca5.mp4',
-                    quality: [
-                        {
-                            name: 'HD',
-                            url: 'https://yuledy.helanzuida.com/20200411/2249_bf514617/1000k/hls/index.m3u8',
-                            type: 'hls',
-                        },
-                        {
-                            name: 'SD',
-                            url: 'https://csrc.vcloud.dogecdn.com/vcloud/17/v/20190424/1556036075_818c4125ec9c8cbc7a7a8a7cc1601512/1037/7d515b22c4958598c0fbd1e6290a5ca5.mp4',
-                            type: 'normal',
-                        },
-                    ],
+                     url:"https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4",
                     defaultQuality: 0,
-                    
+
                     pic: 'https://cdn.jsdelivr.net/gh/FioraLove/Images/531-bigskin-1.jpg',
                     thumbnails: 'https://cdn.jsdelivr.net/gh/FioraLove/Images/531-bigskin-1.jpg',
                     type: 'auto',
@@ -72,12 +54,20 @@
                 },
                 // 弹幕
                 danmaku: {
-                    id: '9E2E3368B56CDBB45',
-                    api: 'https://dplayer.moerats.com/',
+                    /*
+                    * 这是另一个博主搭建的弹幕池
+                    * api: 'https://dplayer.moerats.com
+                    * id: '9E2E3368B56CDBB45
+                    * */
+                    id: '9E2E3368B56CDBB4',
+                    api: 'https://api.prprpr.me/dplayer/',
                     token: 'tokendemo',
                     maximum: 1000,
-                    //addition: ['https://api.prprpr.me/dplayer/v3/bilibili?aid=4157142'],
-                    user: 'DIYgod',
+                    /*
+                    * addition:其实可以直接读取一个由弹幕组成的json
+                    * */
+                    addition: ['https://s-sh-17-dplayercdn.oss.dogecdn.com/1678963.json'],
+                    user: 'AhriLove',
                     bottom: '15%',
                     unlimited: true,
                 },
@@ -96,8 +86,7 @@
                         time: 120,
                         text: '这是 2 分钟',
                     },
-                ],
-            });
+                ]});
             // 快进秒数
             // dp.seek(100);
 
@@ -114,7 +103,7 @@
             );
             // 实时绘制一个新弹幕
             dp.danmaku.draw({
-                text: 'CHD is god',
+                text: '我是five，兄弟萌！！555555',
                 color: '#fff',
                 type: 'bottom',
             });
