@@ -99,6 +99,25 @@ out.mp4是生成文件名，默认是命令行的当前目录，可以通过绝�
 `ffmpeg -i https://abc.net/xx/xx/1000kb/hls/index.m3u8 out.mp4`
 
 
+### 合并.ts结尾的传输流
+> ts文件已经下载至本地
+
+假设已经将下载好了的ts，key文件都保存在同一目录下，此时我们就需要修改源m3u8文件了，修改m3u8文件中key的uri路径和ts文件的路径为本地路径。
+
+```
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:13
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-KEY:METHOD=AES-128,URI="e:/20180125/key.key"
+#EXTINF:12.5,
+e:/20180125/GBDYO3576000.ts
+#EXTINF:12.5,
+e:/20180125/GBDYO3576001.ts
+#EXTINF:12.5,
+e:/20180125/GBDYO3576002.ts
+```
+
 ### DPlayer视频播放
 
 + [DPlayer官网](http://dplayer.js.org/guide.html)
