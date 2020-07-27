@@ -29,7 +29,7 @@
 | 马蜂窝🐝🐝🐝 | ✅✅✅ |  |京东评论💋💋💋  |✅✅✅| 
 | 淘宝登录 | 🛠🛠🛠 |  |[漫画台](https://www.manhuatai.com/)  |✅✅✅| 
 | [腾讯QQ音乐](https://y.qq.com/)🎹🎹🎹 | 🛠🛠🛠 |  | 《我的轻小说爬取程序不可能这么可爱》📚📚📚  |✅✅✅| 
-| [今日头条](https://www.toutiao.com/)📺📺📺 | 🛠🛠🛠|  | | 
+| [今日头条](https://www.toutiao.com/)📺📺📺 | 🛠🛠🛠|  | [Eval加密的扑飞漫画](http://www.pufei8.com/) 📕📕📕| ✅✅✅|
 
 
 
