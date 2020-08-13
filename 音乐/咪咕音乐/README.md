@@ -83,27 +83,6 @@ secKey: 加密
             "hasHQqq":"1"
         },
         {
-            "albumName":"依然范特西",
-            "albumId":"7952",
-            "copyrightId":"60054701961",
-            "mp3":"https://freetyst.nf.migu.cn/public%2Fproduct5th%2Fproduct34%2F2019%2F07%2F0418%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F60054701961.mp3",
-            "unuseFlag":null,
-            "songName":"夜的第七章",
-            "mvId":"",
-            "lyrics":"http://218.200.230.40:18089/files/lyric/2019-07-04/1ca2d281585a4c47a1fa38faccf62729.lrc",
-            "mvCopyrightId":null,
-            "id":"9938",
-            "singerId":"112",
-            "title":"夜的第七章",
-            "cover":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/s_xOuYdbY0cQGq9YY8.jpg",
-            "hasMv":null,
-            "singerName":"周杰伦",
-            "isHdCrbt":null,
-            "hasSQqq":"1",
-            "artist":"周杰伦",
-            "hasHQqq":"1"
-        },
-        {
             "albumName":"十一月的萧邦",
             "albumId":"8591",
             "copyrightId":"60054701952",
@@ -132,7 +111,7 @@ secKey: 加密
 }
 ```
 
-+ 歌曲下载url：https://m.music.migu.cn/migu/remoting/cms_detail_tag?cpid={版权id即copyrightId}
++ 歌曲详细页API1：https://m.music.migu.cn/migu/remoting/cms_detail_tag?cpid={版权id即copyrightId}
 
 ```json
 {
@@ -149,134 +128,81 @@ secKey: 加密
             ],
             "validateDate":null
         },
-        "customizedPicUrl":null,
-        "fanyiLrc":null,
-        "has24Bitqq":null,
-        "has3Dqq":null,
-        "hasHQqq":"1",
-        "hasMv":"1",
-        "hasSQqq":"1",
-        "isHdCrbt":null,
-        "lift":null,
-        "lisCr":"https://freetyst.nf.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F11%2F1816%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%BD%A9%E9%93%83%2F6_mp3-128kbps%2F60054701962.mp3",
-        "lisQq":null,
-        "listenUrl":"https://freetyst.nf.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F11%2F1816%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F60054701962.mp3",
-        "lyricLrc":"[00:00.10]歌曲名 听妈妈的话
-                    [00:00.20]歌手名 周杰伦
-                    [00:00.30]作词：周杰伦
-                    [00:00.40]作曲：周杰伦
-                    [00:10.52]小朋友你是否有很多问号
-                    [00:13.07]为什么别人在那看漫画
-                    [00:15.61]我却在学画画对着钢琴说话
-                    [00:18.15]别人在玩游戏
-                    [00:19.20]我却靠在墙壁背我的ABC 
-                    [00:21.45]我说我要一台大大的飞机
-                    [00:23.79]但却得到一台旧旧录音机
-                    [00:26.39]为什么要听妈妈的话
-                    [00:28.68]长大后你就会开始懂了这段话哼
-                    [00:31.52]长大后我开始明白
-                    [00:33.92]为什么我跑得比别人快
-                    [00:35.56]飞得比别人高
-                    [00:36.46]将来大家看的都是我画的漫画
-                    [00:39.26]大家唱的都是我写的歌
-                    [00:41.81]妈妈的辛苦不让你看见
-                    [00:44.55]温暖的食谱在她心里面
-                    [00:47.05]有空就多多握握她的手
-                    [00:49.54]把手牵着一起梦游
-                    [00:52.18]听妈妈的话别让她受伤
-                    [01:02.26]想快快长大才能保护她
-                    [01:12.94]美丽的白发幸福中发芽
-                    [01:22.87]天使的魔法温暖中慈祥
-                    [01:33.05]在你的未来音乐是你的王牌
-                    [01:35.19]拿王牌谈个恋爱
-                    [01:36.54]唉我不想把你教坏
-                    [01:38.19]还是听妈妈的话吧
-                    [01:39.58]晚点再恋爱吧
-                    [01:41.03]我知道你未来的路
-                    [01:42.48]但妈比我更清楚
-                    [01:43.82]你会开始学其他同学
-                    [01:45.57]在书包写东写西
-                    [01:46.47]但我建议最好写妈妈
-                    [01:48.06]我会用功读书
-                    [01:49.11]用功读书怎么会从我嘴巴说出
-                    [01:51.71]不想你输所以要叫你用功读书
-                    [01:53.95]妈妈织给你的毛衣
-                    [01:55.15]你要好好的收着
-                    [01:56.10]因为母亲节到的时候
-                    [01:57.54]我要告诉她我还留着
-                    [01:58.74]对了我会遇到了周润发
-                    [02:00.69]所以你可以跟同学炫耀
-                    [02:02.48]赌神未来是你爸爸
-                    [02:04.13]我找不到童年写的情书
-                    [02:05.82]你写完不要送人
-                    [02:07.07]因为过两天你会在操场上捡到
-                    [02:09.67]你会开始喜欢上流行歌
-                    [02:11.61]因为张学友开始准备唱吻别
-                    [02:14.75]听妈妈的话别让她受伤
-                    [02:24.88]想快快长大才能保护她
-                    [02:35.01]美丽的白发幸福中发芽
-                    [02:45.44]天使的魔法温暖中慈祥
-                    [02:56.01]听妈妈的话别让她受伤
-                    [03:06.04]想快快长大才能保护她
-                    [03:16.83]长大后我开始明白
-                    [03:18.93]为什么我跑得比别人快
-                    [03:20.58]飞得比别人高
-                    [03:21.52]将来大家看的都是我画的漫画
-                    [03:24.32]大家唱的都是我写的歌
-                    [03:26.96]妈妈的辛苦不让你看见
-                    [03:29.66]温暖的食谱在她心里面
-                    [03:32.25]有空就多多握握她的手
-                    [03:34.64]把手牵着一起梦游
-                    [03:37.34]听妈妈的话别让她受伤
-                    [03:47.37]想快快长大才能保护她
-                    [03:58.04]美丽的白发幸福中发芽
-                    [04:07.97]天使的魔法温暖中慈祥
-                    ",
-        "mvCopyrightId":"600570Y6989",
-        "picL":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/l_zg1XXTJxPOLC00r5.jpg",
-        "picM":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/m_BiRmcpUCK4n7ye4H.jpg",
-        "picS":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/s_xOuYdbY0cQGq9YY8.jpg",
-        "qq":{
-            "copyrihtId":"600547019622",
-            "invalidateDate":"2022-11-30",
-            "productId":"600902000006889206",
-            "resourceIdList":[
-                "011001",
-                "011002",
-                "000009",
-                "020010",
-                "020026",
-                "020007",
-                "020025",
-                "011003",
-                "020024"
-            ],
-            "validateDate":"2009-06-30"
-        },
-        "relationTitle":null,
-        "rt":{
-            "copyrihtId":"600547019621",
-            "invalidateDate":"2022-11-30",
-            "productId":"600902000006889205",
-            "resourceIdList":[
-                "000018",
-                "010014",
-                "999992",
-                "999993"
-            ],
-            "validateDate":"2009-06-29"
-        },
-        "singerId":[
-            "112"
+    "customizedPicUrl":null,
+    "fanyiLrc":null,
+    "has24Bitqq":null,
+    "has3Dqq":null,
+    "hasHQqq":"1",
+    "hasMv":"1",
+    "hasSQqq":"1",
+    "isHdCrbt":null,
+    "lift":null,
+    "lisCr":"https://freetyst.nf.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F11%2F1816%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%BD%A9%E9%93%83%2F6_mp3-128kbps%2F60054701962.mp3",
+    "lisQq":null,
+    "listenUrl":"https://freetyst.nf.migu.cn/public%2Fproduct5th%2Fproduct35%2F2019%2F11%2F1816%2F2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF%2F%E5%85%A8%E6%9B%B2%E8%AF%95%E5%90%AC%2FMp3_64_22_16%2F60054701962.mp3",
+    "lyricLrc":"[00:00.10]歌曲名 听妈妈的话
+                [00:00.20]歌手名 周杰伦
+                [00:00.30]作词：周杰伦
+                [00:00.40]作曲：周杰伦
+                ......
+                [04:07.97]天使的魔法温暖中慈祥
+                ",
+    "mvCopyrightId":"600570Y6989",
+    "picL":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/l_zg1XXTJxPOLC00r5.jpg",
+    "picM":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/m_BiRmcpUCK4n7ye4H.jpg",
+    "picS":"https://mcontent.migu.cn/newlv2/new/album/20200313/7952/s_xOuYdbY0cQGq9YY8.jpg",
+    "qq":{
+        "copyrihtId":"600547019622",
+        "invalidateDate":"2022-11-30",
+        "productId":"600902000006889206",
+        "resourceIdList":[
+            "011001",
+            "011002",
+            "000009",
+            "020010",
+            "020026",
+            "020007",
+            "020025",
+            "011003",
+            "020024"
         ],
-        "singerName":[
-            "周杰伦"
+        "validateDate":"2009-06-30"
+    },
+    "relationTitle":null,
+    "rt":{
+        "copyrihtId":"600547019621",
+        "invalidateDate":"2022-11-30",
+        "productId":"600902000006889205",
+        "resourceIdList":[
+            "000018",
+            "010014",
+            "999992",
+            "999993"
         ],
-        "songDesc":null,
-        "songId":"9925",
-        "songName":"听妈妈的话",
-        "unuseFlag":null
+        "validateDate":"2009-06-29"
+    },
+    "singerId":[
+        "112"
+    ],
+    "singerName":[
+        "周杰伦"
+    ],
+    "songDesc":null,
+    "songId":"9925",
+    "songName":"听妈妈的话",
+    "unuseFlag":null
     }
 }
-
 ```
+
+PS:返回的json数据中，就有`歌词url` ,`播放url`,但都不是高清，无损的。想要获取高清，无损的音质，就需要接下来的API2勒
+
+
++ 歌曲播放的API2：https://app.pd.nf.migu.cn/MIGUM3.0/v1.0/content/sub/listenSong.do?channel=mx&copyrightId={copyrightId}&contentId={contentId}&toneFlag={toneFlag}&resourceType={resourceType}netType=00
+
+   - 参数说明：
+   
+      - copyrightId：每一首歌的唯一版权号
+      - contentId：每一首歌的唯一的内容好，其实是https://m.music.migu.cn/migu/remoting/cms_detail_tag?cpid={版权id即copyrightId} 的json返回值的["qq"]下的["productId"]
+      - toneFlag：音质：LQ,HQ,SQ,3D,24Bit（音质的选择是根据API1来判断的）
+      - resourceType:固定值2
