@@ -35,8 +35,6 @@
 
 
 
-
-
 <br>
 <hr>
 
@@ -55,56 +53,11 @@
 <br>
 <hr>
 
-## API接口汇集板块
+## 开发日志
 
-1. 微博热搜：
+   + ~~ 初始化提交
+   - 2020/9/11 新增视频解析模块，并初始化提交 [场库短视频](https://www.vmovier.com/)
 
-```text
-https://s.weibo.com/top/summary/summary?cate=realtimehot
-```
-
-2. 淘宝商品详情
-
-不要使用decodeURIComponent url解码函数，会出错
-
-```text
-https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=12574478&t=1591867003132&sign=fd63bc888213522424d93c302c9ef5bd&api=mtop.taobao.detail.getdetail&v=6.0&dataType=jsonp&ttid=2017%40taobao_h5_6.6.0&AntiCreep=true&type=jsonp&callback=mtopjsonp2&data=%7B%22itemNumId%22%3A%22567263006792%22%7D
-```
-
-3. GNE新闻提取器，是抽取器的一种，而不是爬虫
-
-官方文档：https://github.com/kingname/GeneralNewsExtractor
-GNE在线测试：http://122.51.39.219/
-通过抓包分析，找出了GNE在线测试的API接口，只需要调用这个接口，就可以或去新闻页内容。**比如今日头条项目，爬取下来的新闻url，就可以通过GNE就可以提取其标题、时间、作者、新闻内容和图片**
-
-+ URL: http://122.51.39.219/extract
-+ 请求方法：POST
-+ 请求参数：*除html参数外，其它都是非必须参数*
-
-```python
-
-{
-   "html":"目标网页源代码",
-   "title_xpath":"用户自定义的提取网页的标题的xpath",
-   "author_xpath":"用户自定义的提取网页的作者的xpath",
-   "publish_time_xpath":"用户自定义的提取网页的发行时间的xpath",
-   "host":"主机",
-   "with_body_html":false,
-   "noise_node_list":[]
-}
-```
-
-+ 响应内容：json数据格式
-
-```json
-{
-   "title": "为了出cos，骚男的胸部是越来越大了",
-   "author": "",
-   "publish_time": "",
-   "content": "",
-   "images": []
-}
-```
 
 
 
