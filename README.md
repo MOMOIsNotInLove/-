@@ -4,8 +4,6 @@
 
 新手小白们（[Galonewxr](https://github.com/Galonewxr)，张先生，胡某）~~持续更新中〜随意Fork，Star，大佬萌多多issue哦。目前更新: 
 
-
-
 <p align="center">
     <a href="https://AhriLove.top"><img src="https://img.shields.io/badge/AhriLove-%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99-orange"></a>
     <a href="https://github.com/python/cpython"><img src="https://img.shields.io/badge/Python-3.7-FF1493.svg"></a>
@@ -30,37 +28,33 @@
 | 淘宝登录 | 🛠🛠🛠 |  |[漫画台](https://www.manhuatai.com/)  |✅✅✅| 
 | [腾讯QQ音乐](https://dengy.qq.com/)&&[咪咕音乐](https://www.migu.cn/)🎹🎹🎹 | 🛠🛠🛠 |  | 《我的轻小说爬取程序不可能这么可爱》📚📚📚  |✅✅✅| 
 | [今日头条](https://www.toutiao.com/)📺📺📺 | 🛠🛠🛠|  | [Eval加密的扑飞漫画](http://www.pufei8.com/) 📕📕📕| ✅✅✅|
-| [咪咕登录](https://www.migu.cn/)&[陌陌登录](https://web.immomo.com/)📼📼📼 |  ✅✅✅|  | [短视频解析](./video-parse) | 持续更新 |
+| [咪咕登录](https://www.migu.cn/)&[陌陌登录](https://web.immomo.com/)📼📼📼 |  ✅✅✅|  | [短视频无水印解析](./video-parse) | 持续更新 |
 
 
+> 短视频解析接口已支持：
 
-<br>
+   - 抖音、快手、小红书、微博、西瓜视频、今日头条、美拍、微视、火山小视频、皮皮虾、好看视频...
+   - VUE、秒拍、梨视频、全民小视频、陌陌视频、Youtube、轻视频、Bilibili、茄子短视频、开眼...
+   - 全民K歌、最右、小咖秀、皮皮搞笑、AcFun、新片场、场库、虎牙等超过20个平台的短视频去水印解析
+
 <hr>
 
 > 近期任务安排:
 
 - [x] 整理Markdown手册
 - [ ] 改善项目
-   - [ ] 知音漫客设置下载起始与截止集数
-   - [x] 今日头条的`关注`和`粉丝`解析逆向出各个参数了，请求后，一直返回空白
-   - [ ] 修复抖音_signaturn的加密js中“webdriver”未定义
-- [ ] 待完成项目
-   - [ ] 腾讯QQ音乐提示“**您播放的歌曲仅限客户端播放**”时，以移动端方式访问(其实很简单的，但要全面重构代码，均通过网页源代码的\<script>标签里包含了完整的歌曲播放路径)
-   - [x] 西瓜视频解析
-   - [ ] 咪咕音乐web端的RSA加密破解
+   - [ ] 持续增加短视频无水印解析接口
 
-<br>
 <hr>
 
-## 开发日志
-
+### 开发日志
    + ~~ 初始化提交
-   - 2020-9-11 新增视频解析模块，并初始化提交 [场库短视频](https://www.vmovier.com/)
-   - 2020-9-21 新增【微博】与【最右】短视频解析
-   - 2020-9-28 增加多个短视频平台解析入口
+   - 2020.09.11 新增视频解析模块，并初始化提交 [场库短视频](https://www.vmovier.com/)
+   - 2020.09.21 新增【微博】与【最右】短视频解析
+   - 2020.09.28 增加多个短视频平台解析入口
 
 
-## 最近方向
+### 最近方向
 
 正在做一个前后分离的小网站，前端Vue，后端Django的rest-framework库提供api，
 
@@ -71,13 +65,14 @@
 > 实现功能：
 
    + 个人主页
+   + 实时热榜
    + 漫画展示
    + 短视频无水印解析下载
    + 音乐聆听
    + 抽象圣经（嘴臭圣经）
    + 留言面板
+   + 在线工具
    + 不对外公布的隐私**数据
-
 
 
 > 成果展示：
