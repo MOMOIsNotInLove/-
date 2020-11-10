@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import re
 import json
 import requests
@@ -40,3 +41,9 @@ class KGe(object):
 
         except Exception as e:
             return json.dumps({"info": "暂无相关数据，请检查相关数据：" + str(e)}, ensure_ascii=False)
+
+
+if __name__ == '__main__':
+    quan_min = KGe("https://kg2.qq.com/node/play?s=D8Gr_IDswJgotDe9&shareuid=&topsource"
+                   "=a0_pn201001006_z11_u3080405925_l1_t1601294577__")
+    print(quan_min.get_video())

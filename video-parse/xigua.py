@@ -1,36 +1,60 @@
 # -*- coding:utf-8 -*-
 import requests
+import re
 import json
-import time
+import base64
 
 """
-目标：尝试爬取西瓜视频
+目标网站：西瓜视频
+目标url：APP分享链接或web网页url
+注意点：西瓜视频与哔哩哔哩都将音视频分割开了，用户只有使用剪辑软件自己拼接
 """
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36",
-    "cookie": "td_cookie=2895957341; wafid=aa79e1cd-16dc-421b-b94d-b20a5ebfe91c; wafid.sig=D1-hFWUnCB8JJJTV-R1e_Cdx9uI; ttwid=6828065332000769548; ttwid.sig=ec3MPPdMOxx89J6pbmB2OuU52MA; xiguavideopcwebid=6828065332000769548; xiguavideopcwebid.sig=yjuAl7rEBOyfAgDFXiIB2YRIClg; SLARDAR_WEB_ID=6e7b528c-1744-4481-8954-69b88fa6dc9a; _ga=GA1.2.1690086969.1589782861; _gid=GA1.2.1558373712.1589782861; ixigua-a-s=1; s_v_web_id=verify_kac6yx8v_ow0JbieE_IIBj_41xD_8WKa_oNG1TTArwzeg; _gat_gtag_UA_138710293_1=1"}
-url = "https://www.ixigua.com/api/feedv2/feedById?_signature=gr1SjgAgEA1wkmDJc74FlIK9UpAANyM&channelId=94349543909&count=9&maxTime=0&request_from=701"
 
+class XiGua(object):
+    def __init__(self, url):
+        self.url = url
+        self.session = requests.Session()
 
-def get_info():
-    try:
-        # 获取毫秒级的时间戳
-        stamp = int(time.time())
-        params = {
-            "_signature": "iAhAtAAgEA56J3Lz0Xeki4gIQKAANbX",
-            "channelId": "94349543909",
-            "count": 9,
-            "maxTime": stamp,
-            "request_from": 701
+    def get_video(self):
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                          "Chrome/79.0.3945.88 Safari/537.36 "
         }
-        response = requests.get(url=url, timeout=10)
-        if response.status_code == 200:
-            print(response.json())
-
-    except Exception as e:
-        print(e)
+        pattern_video = re.compile('"dynamic_video_list":\[(.*?)\],', re.S)
+        pattern_audio = re.compile('"dynamic_audio_list":\[(.*?)\],', re.S)
+        pattern_desc = re.compile('<meta data-react-helmet="true" name="description" content="(.*?)"/>', re.S)
+        try:
+            response = self.session.get(url=self.url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                try:
+                    doc = response.text
+                    desc = re.findall(pattern_desc, doc)[0]
+                    videos = json.loads("[" + re.findall(pattern_video, doc)[0] + "]")
+                    audios = json.loads("[" + re.findall(pattern_audio, doc)[0] + "]")
+                    # 选择清晰度最高的那个音视频
+                    quality = videos[-1]["definition"]
+                    video_url = base64.b64decode(videos[-1]["main_url"])
+                    audio_url = base64.b64decode(audios[-1]["main_url"])
+                    title = desc.encode('raw_unicode_escape').decode()
+                    info = {
+                        "title": title.split("西瓜视频为您")[0],
+                        "quality": quality,
+                        "video_url": video_url.decode("utf-8"),
+                        "audio_url": audio_url.decode("utf-8"),
+                        "description": "本api会选择视频清晰度最高的视频；西瓜视频的音视频是分离开的，请搭配使用剪辑软件拼接音视频源"
+                    }
+                    return json.dumps(info, ensure_ascii=False)
+                except Exception as e:
+                    return json.dumps({"info": "暂无相关数据，请检查相关数据：" + str(e)}, ensure_ascii=False)
+            else:
+                return json.dumps({"info": "暂无相关数据，请检查相关数据："}, ensure_ascii=False)
+        except Exception as e:
+            return json.dumps({"info": "暂无相关数据，请检查相关数据：" + str(e)}, ensure_ascii=False)
 
 
 if __name__ == '__main__':
-    get_info()
+    xigua = XiGua(
+        "https://www.ixigua.com/6837727489259733518/?app=video_article&timestamp=1602058436&utm_source=copy_link"
+        "&utm_medium=android&utm_campaign=client_share")
+    print(xigua.get_video())
