@@ -1,11 +1,13 @@
 # -*- coding:utf-8 -*-
-import requests
-import json
 import re
+import json
+import requests
 
 """
-目标APP：全名K哥
-目标url：视频分享链接
+目标APP：全名K歌
+目标url：APP视频分享链接
+爬取思路：
+    1. 视频信息就是在网页源代码中，可以利用正则来提取出来
 """
 
 
@@ -22,11 +24,13 @@ class KGe(object):
         try:
             result = self.session.get(url=self.url, headers=headers, timeout=10)
             pattern = re.compile('"playurl_video":"(.*?)",', re.S)
+            cover_pattern = re.compile('"fb_cover":"(.*?)",', re.S)
             if result.status_code == 200:
                 try:
                     res = result.text
                     url = re.findall(pattern, res)[0]
                     info = {
+                        "cover": re.findall(cover_pattern, res)[0],
                         "url": url,
                     }
                     return json.dumps(info, ensure_ascii=False)
@@ -40,6 +44,6 @@ class KGe(object):
 
 
 if __name__ == '__main__':
-    kuaishou = KGe(
-        "https://kg2.qq.com/node/play?s=D8Gr_IDswJgotDe9&shareuid=&topsource=a0_pn201001006_z11_u3080405925_l1_t1601294577__")
-    print(kuaishou.get_video())
+    quan_min = KGe("https://kg2.qq.com/node/play?s=D8Gr_IDswJgotDe9&shareuid=&topsource"
+                   "=a0_pn201001006_z11_u3080405925_l1_t1601294577__")
+    print(quan_min.get_video())
