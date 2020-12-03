@@ -2,7 +2,6 @@
 
 **不积跬步，无以至千里；不积小流，无以成江海**
 
-新手小白们（[Galonewxr](https://github.com/Galonewxr)，张先生，胡某）~~持续更新中〜随意Fork，Star，大佬萌多多issue哦。目前更新: 
 
 <p align="center">
     <a href="https://AhriLove.top"><img src="https://img.shields.io/badge/AhriLove-%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99-orange"></a>
@@ -14,21 +13,20 @@
     <a href="https://github.com/FioraLove/Net-Spider/network/members"><img src="https://img.shields.io/github/forks/FioraLove/Net-Spider.svg?color=blue&logo=github"></a>
     <a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" align="right" height="48" width="48" ></a>
 </p>
-<br />
 
+新手小白~~持续更新中〜随意Fork，Star，若某些接口解析失效，请大佬萌多多issue哦。目前更新: 
+<br>
 
-| 项目 | 状态|  |项目 | 状态|
-|  ----  | ----  | ----  | ---- |----|
-| 抖音视频无水印解析🎶🎶🎶 | 🛠 |  | [bilibili音视频解析和弹幕获取🐱‍👓](https://bilibili.com) | ✅|
-| 知音漫客图片加密 🔥 | ✅ |  |世纪佳缘信息👨‍👩‍👧‍👦  |✅| 
-| 小鸡词典🐥🐥 | ✅ |  |拉钩网职位信息✔  |✅| 
-| 斗鱼主播列表🐟🐟🐟 | ✅ |  |openlaw裁决网🕵🕵🕵  |✅| 
-| CSDN文章 🌍🌎🌏 | ✅ |  |代理池🚣‍♂️🚣‍♂️🚣‍♂️  |✅| 
-| 马蜂窝🐝🐝🐝 | ✅ |  |[漫画台](https://www.manhuatai.com/)  |✅| 
-| [腾讯QQ音乐](https://dengy.qq.com/)&&[咪咕音乐](https://www.migu.cn/) | 🛠 |  | 《我的轻小说爬取程序不可能这么可爱》 |✅| 
-| [今日头条](https://www.toutiao.com/)📺📺📺 | 🛠|  | [Eval加密的扑飞漫画](http://www.pufei8.com/) | ✅|
-| [咪咕登录](https://www.migu.cn/)&[陌陌登录](https://web.immomo.com/) |  ✅|  | [短视频无水印解析](./video-parse) | 持续更新 |
+| 项目 | 状态| 项目 | 状态| 项目 | 状态|
+|  ----  | ----  | ----  | ---- |----|----|
+| [抖音无水印解析](./抖音/抖音最新版) | 🛠 | [短视频无水印解析](./video-parse) | 持续更新| [咪咕登录](./模拟登录/咪咕) | ✔|
+| 知音漫客 | ✔ | [扑飞漫画](./漫画/扑飞漫画/README.md)  |✔| [漫画台](./漫画/漫画台/README.md)  |✔| 
+| 小鸡词典 | ✔ | 拉钩网职位信息  |✔| [今日头条](./今日头条) | 🛠 | 
+| 斗鱼主播列表 | ✔ | openlaw裁决网 |✔|代理池  |✔|
+| CSDN文章  | ✔ | [轻小说爬取](./轻小说与动漫列表大全/README.md) | ✔ | [陌陌登录](./模拟登录/陌陌) | ✔ |
+| 马蜂窝 | ✔ | [Pixiv](./国外网站/Pixiv/README.md) |✔ | | |
 
+<br>
 
 > 短视频解析接口已支持：
 
@@ -52,7 +50,7 @@
    - 2020-09-11 新增视频解析模块，并初始化提交
    - 2020-09-28 持续更新短视频无水印解析入口
    - 2020-11-10 更新修复失效解析接口
-   - 2020-11-28 新增【**Pornhub**】视频下载解析接口
+   - 2020-11-28 新增【**Pornhub/Pixiv**】视频下载解析接口
 
 ### 最近方向
 
@@ -78,4 +76,4 @@
 
 > 成果展示：
 
-  - ![](https://cdn.jsdelivr.net/gh/FioraLove/Images/home.gif)
+ - ![](https://cdn.jsdelivr.net/gh/FioraLove/Images/home.gif)
