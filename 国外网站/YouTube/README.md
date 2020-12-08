@@ -22,7 +22,7 @@ x-client-data: CIi2yQEIo7bJAQjBtskBCKmdygEI6rjKAQisx8oBCPbHygEI6cjKAQi0y8oBCNzVy
     }
 ```
 
-![youbutu](./YouTube.png)
+![youbutu](YouTube.png)
 
 + 返回结果：
 
